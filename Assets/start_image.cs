@@ -20,6 +20,6 @@ public class start_image : MonoBehaviour
     {
         Vector3 speed = Vector3.zero;
         XRray.transform.position = Vector3.SmoothDamp(XRray.transform.position, des, ref speed, 0.1f);
-        Background.transform.position = Vector3.SmoothDamp(Background.transform.position, back_destination, ref speed, 0.1f);
+        Background.transform.position = Vector3.SmoothDamp(Background.transform.position, back_destination, ref speed, 0.2f);
     }
 }
