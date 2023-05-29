@@ -8,7 +8,7 @@ using UnityEngine.Events;
 /// </summary>
 public class OnTrigger : MonoBehaviour
 {
-    public string requiredTag = string.Empty;
+    public GameObject floor;
 
     [Serializable] public class TriggerEvent : UnityEvent<Collider> { }
 
@@ -32,19 +32,20 @@ public class OnTrigger : MonoBehaviour
 
     private bool CanTrigger(GameObject otherGameObject)
     {
-        if(requiredTag != string.Empty)
-        {
-            return otherGameObject.CompareTag(requiredTag);
-        }
-        else
+        Debug.Log(otherGameObject);
+        if(otherGameObject == floor)
         {
             return true;
         }
+        else
+        {
+            return false;
+        }
     }
 
-    private void OnValidate()
+    /*private void OnValidate()
     {
         if (TryGetComponent(out Collider collider))
             collider.isTrigger = true;
-    }
+    }*/
 }
