@@ -7,7 +7,7 @@ public class start_image : MonoBehaviour
     public GameObject XRray;
     public GameObject Background;
     public int a;
-    Vector3 des = new Vector3 (1, 1, 0);
+    Vector3 des = new Vector3 (1, 0, 0);
     Vector3 back_destination = new Vector3 (-6, 28, 100);
     // Start is called before the first frame update
     void Start()
