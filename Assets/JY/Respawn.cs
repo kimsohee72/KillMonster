@@ -6,10 +6,20 @@ public class Respawn : MonoBehaviour
 {
     Transform target;
     public GameObject Rock;
+    public LayerMask worldLayer;
+    Ray ray;
+    int skeleton;
+
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    void Update()
+    {
+        ray = new Ray(transform.position, Vector3.forward);
+        skeleton = LayerMask.NameToLayer("Skeleton");
     }
 
     // Update is called once per frame
@@ -22,5 +32,7 @@ public class Respawn : MonoBehaviour
             target = Rock.GetComponent<Transform>();
             target.position = new Vector3(1.67f, 0.80f, 0.01f);
         }
+
+        Debug.DrawRay(transform.position, Vector3.forward * 1.0f, new Color(0, 1, 0));
     }
 }
