@@ -7,7 +7,7 @@ public class new_skeleton : MonoBehaviour
 {
     GameObject skeleton;
     Vector3 des;
-    int num = 0;
+    int num = -1;
     public GameObject skeleton1;
     public GameObject skeleton2;
     public GameObject skeleton3;
