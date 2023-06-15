@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class change_w : MonoBehaviour
 {
-    public int a = 0;
+    public int a = 1;
     GameObject weapon;
     public GameObject rocks;
     public GameObject sword;
     public GameObject gun;
+    public GameObject skeleton;
+    public GameObject cube;
+    public GameObject end;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,12 @@ public class change_w : MonoBehaviour
             weapon = gun;
             weapon.SetActive(true);
         }
-        
+        if (a>6){
+            weapon.SetActive(false);
+            skeleton.SetActive(false);
+            cube.SetActive(false);
+            end.SetActive(true);
+        }
     }
    
 }
