@@ -12,6 +12,7 @@ public class new_skeleton : MonoBehaviour
     public GameObject skeleton2;
     public GameObject skeleton3;
     public GameObject skeleton4;
+    public GameObject plain;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class new_skeleton : MonoBehaviour
                 skeleton1.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
+                plain.SetActive(true);
             }
         }
 
@@ -63,6 +65,7 @@ public class new_skeleton : MonoBehaviour
                 skeleton2.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
+                plain.SetActive(true);
             }
         }
 
@@ -73,6 +76,7 @@ public class new_skeleton : MonoBehaviour
                 skeleton3.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
+                plain.SetActive(true);
             }
         }
 
@@ -83,6 +87,7 @@ public class new_skeleton : MonoBehaviour
                 skeleton4.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
+                plain.SetActive(true);
             }
         }
         
