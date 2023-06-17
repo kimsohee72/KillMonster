@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Respawn : MonoBehaviour
+public class rock_script : MonoBehaviour
 {
     Transform target;
     public GameObject Rock, enemy;
@@ -36,7 +36,7 @@ public class Respawn : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, Vector3.forward * 1.0f, new Color(0, 1, 0));
-        Debug.DrawRay(transform.position, Vector3.forward * 1.0f, new Color(0, 0, 1));
+        Debug.DrawRay(transform.position, Vector3.down * 1.0f, new Color(0, 0, 1));
         if (Physics.Raycast(ray1, out hitinfo, 0.5f, 1 << skeleton) || Physics.Raycast(ray2, out hitinfo, 0.5f, 1 << skeleton))
         {
             Debug.Log("die!");
