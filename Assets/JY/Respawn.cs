@@ -5,9 +5,10 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     Transform target;
-    public GameObject Rock;
+    public GameObject Rock, enemy;
     public LayerMask worldLayer;
-    Ray ray;
+    Ray ray1, ray2;
+    RaycastHit hitinfo;
     int skeleton;
 
     // Start is called before the first frame update
@@ -18,7 +19,8 @@ public class Respawn : MonoBehaviour
 
     void Update()
     {
-        ray = new Ray(transform.position, Vector3.forward);
+        ray1 = new Ray(transform.position, Vector3.forward);
+        ray2 = new Ray(transform.position, Vector3.down);
         skeleton = LayerMask.NameToLayer("Skeleton");
     }
 
@@ -34,5 +36,14 @@ public class Respawn : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, Vector3.forward * 1.0f, new Color(0, 1, 0));
+        Debug.DrawRay(transform.position, Vector3.forward * 1.0f, new Color(0, 0, 1));
+        if (Physics.Raycast(ray1, out hitinfo, 0.5f, 1 << skeleton) || Physics.Raycast(ray2, out hitinfo, 0.5f, 1 << skeleton))
+        {
+            Debug.Log("die!");
+            Debug.Log(hitinfo.transform.name);
+            enemy = GameObject.Find(hitinfo.transform.name);
+            enemy.SetActive(false);
+            //destroy
+        }        
     }
 }
