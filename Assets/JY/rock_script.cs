@@ -37,7 +37,7 @@ public class rock_script : MonoBehaviour
 
         Debug.DrawRay(transform.position, Vector3.forward * 1.0f, new Color(0, 1, 0));
         Debug.DrawRay(transform.position, Vector3.down * 1.0f, new Color(0, 0, 1));
-        if (Physics.Raycast(ray1, out hitinfo, 0.5f, 1 << skeleton) || Physics.Raycast(ray2, out hitinfo, 0.5f, 1 << skeleton))
+        if (Physics.Raycast(ray1, out hitinfo, 1.0f, 1 << skeleton) || Physics.Raycast(ray2, out hitinfo, 1.0f, 1 << skeleton))
         {
             Debug.Log("die!");
             Debug.Log(hitinfo.transform.name);
