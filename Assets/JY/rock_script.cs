@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class rock_script : MonoBehaviour
 {
+    public GameManager gameManager;
     Transform target;
     public GameObject Rock, enemy;
     public LayerMask worldLayer;
@@ -14,7 +15,7 @@ public class rock_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager.skeleton = false;
     }
 
     void Update()
@@ -43,6 +44,11 @@ public class rock_script : MonoBehaviour
             Debug.Log(hitinfo.transform.name);
             enemy = GameObject.Find(hitinfo.transform.name);
             enemy.SetActive(false);
+            if (gameManager.skeleton == false)
+            {
+                gameManager.point++;
+                gameManager.skeleton = true;
+            }
             //destroy
         }        
     }
