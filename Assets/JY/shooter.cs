@@ -19,7 +19,6 @@ public class shooter : MonoBehaviour
     private void Start()
     {
         Stop();
-        gameManager.skeleton = false;
     }
 
     public void Play()
@@ -60,6 +59,7 @@ public class shooter : MonoBehaviour
                 gameManager.point++;
                 gameManager.skeleton = true;
             }
+            gameManager.skeleton = false;
 
             OnShootSuccess?.Invoke(hitInfo.point);
         }

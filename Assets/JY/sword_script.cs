@@ -14,7 +14,7 @@ public class sword_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.skeleton = false;
+
     }
 
     // Update is called once per frame
@@ -38,6 +38,7 @@ public class sword_script : MonoBehaviour
                 gameManager.point++;
                 gameManager.skeleton = true;
             }
+            gameManager.skeleton = false;
         }
     }
 }

@@ -15,7 +15,7 @@ public class rock_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.skeleton = false;
+
     }
 
     void Update()
@@ -49,7 +49,7 @@ public class rock_script : MonoBehaviour
                 gameManager.point++;
                 gameManager.skeleton = true;
             }
-            //destroy
+            gameManager.skeleton = false;
         }        
     }
 }
