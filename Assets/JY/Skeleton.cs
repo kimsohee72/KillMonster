@@ -12,7 +12,8 @@ public class Skeleton : MonoBehaviour
     public GameObject heart2;
     public GameObject plain;
     public GameObject end;
-    public GameObject cube;
+    public GameObject All;
+    int x = 0;
     Ray ray;
     int ground;
     int n = 0;
@@ -23,8 +24,10 @@ public class Skeleton : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log("x = " + x);
         if (num == 1)
         {
+            All.SetActive(false);
             heart = heart1;
         }
         else if (num == 2)
@@ -33,12 +36,13 @@ public class Skeleton : MonoBehaviour
         }
         else if (num == 3)
         {
-            cube.SetActive(false);
             end.SetActive(true);
+            
         }
         ray = new Ray(transform.position, Vector3.down);
         ground = LayerMask.NameToLayer("Ground");
-         
+     
+
     }
 
     void FixedUpdate()
