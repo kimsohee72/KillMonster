@@ -27,7 +27,6 @@ public class Skeleton : MonoBehaviour
         Debug.Log("x = " + x);
         if (num == 1)
         {
-            All.SetActive(false);
             heart = heart1;
         }
         else if (num == 2)
@@ -36,8 +35,8 @@ public class Skeleton : MonoBehaviour
         }
         else if (num == 3)
         {
-            end.SetActive(true);
-            
+            All.SetActive(false);
+
         }
         ray = new Ray(transform.position, Vector3.down);
         ground = LayerMask.NameToLayer("Ground");

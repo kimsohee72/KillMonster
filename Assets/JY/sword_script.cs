@@ -11,7 +11,7 @@ public class sword_script : MonoBehaviour
     Ray ray;
     RaycastHit hitinfo;
     int skeleton;
-
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +45,7 @@ public class sword_script : MonoBehaviour
             if(gameManager.skeleton == false)
             {
                 gameManager.point++;
+                audio.Play();
                 gameManager.skeleton = true;
             }
             gameManager.skeleton = false;

@@ -15,7 +15,7 @@ public class on_off : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (A.activeSelf == false )
+        if (A.activeSelf == false)
         {
             B.SetActive(true);
         }
