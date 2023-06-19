@@ -11,6 +11,7 @@ public class rock_script : MonoBehaviour
     Ray ray1, ray2;
     RaycastHit hitinfo;
     int skeleton;
+    public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class rock_script : MonoBehaviour
         if (Physics.Raycast(ray1, out hitinfo, 1.0f, 1 << skeleton) || Physics.Raycast(ray2, out hitinfo, 1.0f, 1 << skeleton))
         {
             Debug.Log("die!");
+            audio.Play();
             Debug.Log(hitinfo.transform.name);
             enemy = GameObject.Find(hitinfo.transform.name);
             enemy.SetActive(false);

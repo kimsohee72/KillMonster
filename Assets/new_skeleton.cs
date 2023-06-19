@@ -36,21 +36,19 @@ public class new_skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (number > 2)
+        if (number > 2 && number < 5)
         {
-            weapon.SetActive(false);
-            weapon = sword;
-            weapon.SetActive(true);
+            rocks.SetActive(false);
+            sword.SetActive(true);
         }
-        if (number > 4)
+        if (number > 4 && number < 7)
         {
-            weapon.SetActive(false);
-            weapon = gun;
-            weapon.SetActive(true);
+            sword.SetActive(false);
+            gun.SetActive(true);
         }
         if (number > 7)
         {
-            weapon.SetActive(false);
+            gun.SetActive(false);
             skeleton0.SetActive(false);
             cube.SetActive(false);
             end.SetActive(true);
@@ -60,7 +58,6 @@ public class new_skeleton : MonoBehaviour
             x = 0;
             System.Random randomObj = new System.Random();
             int randomValue = randomObj.Next(0, 4);
-            Debug.Log("hello = "+number);
             if(randomValue == 0){
                 skeleton = skeleton1;
                 num = 0;
@@ -159,7 +156,7 @@ public class new_skeleton : MonoBehaviour
                 plain.SetActive(true);
             }
         }
-        
+        Debug.Log("hello = " + number);
 
     }
 }
