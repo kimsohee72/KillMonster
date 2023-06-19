@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class shooter : MonoBehaviour
 {
+    public GameManager gameManager;
     public LayerMask hittableMask;
     public GameObject hitEffectPrefab, enemy;
     public Transform shootPoint;
@@ -18,6 +19,7 @@ public class shooter : MonoBehaviour
     private void Start()
     {
         Stop();
+        gameManager.skeleton = false;
     }
 
     public void Play()
@@ -53,6 +55,11 @@ public class shooter : MonoBehaviour
             Debug.Log(hitInfo.transform.name);
             enemy = GameObject.Find(hitInfo.transform.name);
             enemy.SetActive(false);
+            if (gameManager.skeleton == false)
+            {
+                gameManager.point++;
+                gameManager.skeleton = true;
+            }
 
             OnShootSuccess?.Invoke(hitInfo.point);
         }

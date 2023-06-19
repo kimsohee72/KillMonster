@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class sword_script : MonoBehaviour
 {
+    public GameManager gameManager;
     public GameObject enemy;
     public LayerMask worldLayer;
     Ray ray;
@@ -13,7 +14,7 @@ public class sword_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager.skeleton = false;
     }
 
     // Update is called once per frame
@@ -32,6 +33,11 @@ public class sword_script : MonoBehaviour
             Debug.Log(hitinfo.transform.name);
             enemy = GameObject.Find(hitinfo.transform.name);
             enemy.SetActive(false);
+            if(gameManager.skeleton == false)
+            {
+                gameManager.point++;
+                gameManager.skeleton = true;
+            }
         }
     }
 }
