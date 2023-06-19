@@ -11,7 +11,7 @@ public class Skeleton : MonoBehaviour
     public GameObject heart1;
     public GameObject heart2;
     public GameObject plain;
-    public GameObject end;
+    public AudioSource audio;
     public GameObject All;
     int x = 0;
     Ray ray;
@@ -54,6 +54,7 @@ public class Skeleton : MonoBehaviour
             plain.SetActive(false);
             Debug.Log("num = " + num);
             Debug.Log("ground!");
+            audio.Play();
             heart.SetActive(false);
         
         }
