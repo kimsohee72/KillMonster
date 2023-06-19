@@ -5,7 +5,8 @@ using UnityEngine;
 public class sword_script : MonoBehaviour
 {
     public GameManager gameManager;
-    public GameObject enemy;
+    Transform target;
+    public GameObject Sword, enemy;
     public LayerMask worldLayer;
     Ray ray;
     RaycastHit hitinfo;
@@ -26,6 +27,14 @@ public class sword_script : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Debug.Log(transform.position);
+
+        if(transform.position.y < -0.5f)
+        {
+            target = Sword.GetComponent<Transform>();
+            target.position = new Vector3(1.46f, 0.9f, -0.21f);
+        }
+
         Debug.DrawRay(transform.position, Vector3.left * 0.1f + Vector3.forward*2.0f, new Color(0, 0, 1));
         if(Physics.Raycast(ray, out hitinfo, 2.0f, 1 << skeleton))
         {
