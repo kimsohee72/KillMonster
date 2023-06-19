@@ -8,6 +8,7 @@ public class new_skeleton : MonoBehaviour
     GameObject skeleton;
     Vector3 des;
     int num = -1;
+    int x = 0;
     public GameObject skeleton1;
     public GameObject skeleton2;
     public GameObject skeleton3;
@@ -25,6 +26,7 @@ public class new_skeleton : MonoBehaviour
     void Update()
     {
         if(num == -1){
+            x = 0;
             System.Random randomObj = new System.Random();
             int randomValue = randomObj.Next(0, 4);
             Debug.Log(randomValue);
@@ -49,8 +51,13 @@ public class new_skeleton : MonoBehaviour
         
         if(num == 0)
         {
-            skeleton.SetActive(true);
-            if(skeleton.transform.position.z< -5){
+            if (x == 0)
+            {
+                skeleton.SetActive(true);
+                x = -1;
+            }
+            if(skeleton.transform.position.z< -5 || skeleton.activeSelf == false)
+            {
                 skeleton1.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
@@ -60,8 +67,13 @@ public class new_skeleton : MonoBehaviour
 
         if(num == 1)
         {
-            skeleton.SetActive(true);
-            if(skeleton.transform.position.z< -5){
+            if (x == 0)
+            {
+                skeleton.SetActive(true);
+                x = -1;
+            }
+            if (skeleton.transform.position.z< -5 || skeleton.activeSelf == false)
+            {
                 skeleton2.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
@@ -71,8 +83,13 @@ public class new_skeleton : MonoBehaviour
 
         if(num == 2)
         {
-            skeleton.SetActive(true);
-            if(skeleton.transform.position.z< -5){
+            if (x == 0)
+            {
+                skeleton.SetActive(true);
+                x = -1;
+            }
+            if (skeleton.transform.position.z< -5 || skeleton.activeSelf == false)
+            {
                 skeleton3.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
@@ -82,8 +99,13 @@ public class new_skeleton : MonoBehaviour
 
         if(num == 3)
         {
-            skeleton.SetActive(true);
-            if(skeleton.transform.position.z< -5){
+            if (x == 0)
+            {
+                skeleton.SetActive(true);
+                x = -1;
+            }
+            if (skeleton.transform.position.z< -5 || skeleton.activeSelf == false)
+            {
                 skeleton4.transform.position = des;
                 skeleton.SetActive(false);
                 num = -1;
