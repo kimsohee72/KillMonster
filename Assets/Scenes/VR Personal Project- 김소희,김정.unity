@@ -7305,6 +7305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 885444242}
+  Sword: {fileID: 383175106}
   enemy: {fileID: 0}
   worldLayer:
     serializedVersion: 2
@@ -10589,6 +10590,7 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 4337926505467609556, guid: 649bb586f509362428950ce6f96bae6f,
     type: 3}
   enemy: {fileID: 0}
+  Gun: {fileID: 523578506}
   shootPoint: {fileID: 527968792}
   shootDelay: 0.1
   maxDistance: 100
