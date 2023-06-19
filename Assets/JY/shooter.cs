@@ -7,7 +7,7 @@ public class shooter : MonoBehaviour
 {
     public GameManager gameManager;
     public LayerMask hittableMask;
-    public GameObject hitEffectPrefab, enemy;
+    public GameObject hitEffectPrefab, enemy, Gun;
     public Transform shootPoint;
 
     public float shootDelay = 0.1f;
@@ -15,6 +15,8 @@ public class shooter : MonoBehaviour
 
     public UnityEvent<Vector3> OnShootSuccess;
     public UnityEvent OnShootFail;
+
+    Transform target;
 
     private void Start()
     {
@@ -67,6 +69,17 @@ public class shooter : MonoBehaviour
         {
             var hitPoint = shootPoint.position + shootPoint.forward * maxDistance;
             OnShootSuccess?.Invoke(hitPoint);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        //Debug.Log(transform.position);
+
+        if (transform.position.y < -0.5f)
+        {
+            target = Gun.GetComponent<Transform>();
+            target.position = new Vector3(1.66f, 0.55f, 0.25f);
         }
     }
 }
